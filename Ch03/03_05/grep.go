@@ -27,7 +27,7 @@ func grep(r io.Reader, term string) ([]string, error) {
 }
 
 func main() {
-	file, err := os.Open("journal.txt")
+	file, err := os.Open("/home/silali/Work/playground/linkedin-go/Ch03/03_05/journal.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
