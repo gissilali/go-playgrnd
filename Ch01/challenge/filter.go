@@ -6,7 +6,13 @@ import (
 
 // filter returns a slice with only the values that pred(val) returned true
 func filter(pred func(int) bool, values []int) []int {
-	return nil // FIXME
+	var filtered []int
+	for _, value := range values {
+		if pred(value) {
+			filtered = append(filtered, value)
+		}
+	}
+	return filtered
 }
 
 func isOdd(n int) bool {
