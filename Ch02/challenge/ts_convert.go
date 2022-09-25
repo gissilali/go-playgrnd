@@ -17,8 +17,8 @@ func tsConvert(ts, from, to string) (string, error) {
 	if err != nil {
 		fmt.Printf("error: %s", err)
 	}
-
-	parsedTime, err := time.ParseInLocation("2006-01-02T15:04", ts, initialTimezone)
+	format := "2006-01-02T15:04"
+	parsedTime, err := time.ParseInLocation(format, ts, initialTimezone)
 
 	if err != nil {
 		fmt.Printf("error: %s", err)
@@ -26,7 +26,7 @@ func tsConvert(ts, from, to string) (string, error) {
 
 	convertedTime := parsedTime.In(finalTimezone)
 
-	return convertedTime.Format("2006-01-02T15:04"), nil // FIXME
+	return convertedTime.Format(format), nil // FIXME
 }
 
 func main() {
